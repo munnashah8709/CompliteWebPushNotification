@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getToken } from "firebase/messaging";
-import { messaging } from "./firebase.config";
+import { messaging } from "./firrebase.config";
 
 const Lonin = (e) => {
   const [inputdata, setinputdata] = useState({});
   const [DeviceToken, setdeviceTocken] = useState("");
-
 
 
   async function requestPermission() {
@@ -13,7 +12,7 @@ const Lonin = (e) => {
     if (permission === "granted") {
       console.log(permission);
       const token = await getToken(messaging, {
-        vapidKey:"BChtt3ZJI-TLGJR2MxiWcBxYO5DOjseOUHesXaxL6-oAyIGV1KrmueGGUPqtQsXrCIZX2_LbSfFDXwYoxXcscVM",
+        vapidKey:"BI2b56P1YJXd79-fFItPLM5zpkJNp6VDI7sQDvDcqfogwfsJ1wTm2kLIRHEi8bin5F-JbUst95SbcG5RWqd9g8k",
       });
       setdeviceTocken(token);
     } else if (permission === "denied") {
